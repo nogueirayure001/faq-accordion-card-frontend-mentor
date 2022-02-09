@@ -1,0 +1,314 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+/* *************** CSS RESET *************** */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* *************** GENERAL STYLES *************** */
+body {
+  height: 100%;
+  min-height: 100vh;
+  font: 100%/1.5 "Kumbh Sans", sans-serif;
+}
+
+div#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 100vh;
+  padding: 13rem 2rem 4rem;
+  background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+}
+
+div.wrapper {
+  position: relative;
+}
+
+div.illustration-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 80%;
+  max-width: 24rem;
+  transform: translate(-50%, -50%);
+}
+
+div.illustration {
+  width: 100%;
+  padding-top: 90%;
+  background-image: url(./images/illustration-woman-online-mobile.svg),
+    url(./images/bg-pattern-mobile.svg);
+  background-position: top, bottom;
+  background-size: contain;
+}
+
+.illustration,
+.illustration-box {
+  background-repeat: no-repeat;
+}
+
+div.content-wrapper {
+  max-width: 35rem;
+  padding: 12rem 2rem 4rem;
+  background-color: #fff;
+  border-radius: 1.5rem;
+}
+
+header {
+  margin-bottom: 1rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+li {
+  padding: 0.8rem 0;
+  transition: all 400ms;
+}
+
+li:not(:last-child) {
+  border-bottom: 1px solid hsl(240, 5%, 91%);
+}
+
+li > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h2 {
+  text-align: left;
+  font-weight: 400;
+  color: hsl(237, 12%, 33%);
+  transition: color 300ms;
+}
+
+h2.heading--opened {
+  color: hsl(238, 29%, 16%);
+  font-weight: 700;
+}
+
+h2:hover {
+  color: hsl(14, 88%, 65%);
+}
+
+button {
+  width: 20px;
+  height: 14px;
+  background-color: transparent;
+  background-image: url(./images/icon-arrow-down.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: none;
+  transition: transform 400ms;
+}
+
+button.button--opened {
+  transform: rotate(180deg);
+}
+
+p {
+  height: 0;
+  padding-top: 0.5rem;
+  color: hsl(240, 6%, 50%);
+  font-size: 0.9rem;
+  font-weight: 700;
+  overflow: hidden;
+  transition: height 2000ms;
+}
+
+p.parag--opened {
+  height: auto;
+}
+
+@media screen and (min-width: 1024px) {
+  div#root {
+    padding: 4rem;
+  }
+
+  div.wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 1rem;
+    max-width: 64rem;
+    background-color: #fff;
+    border-radius: 1.5rem;
+  }
+
+  div.illustration-wrapper {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    position: relative;
+    left: 0;
+    transform: none;
+    display: flex;
+    width: 100%;
+    max-width: none;
+  }
+
+  div.illustration {
+    background-image: url(./images/illustration-woman-online-desktop.svg),
+      url(./images/bg-pattern-desktop.svg);
+    background-position: -5rem 2rem, -21rem -10rem;
+    background-size: contain, 150%;
+  }
+
+  div.illustration-box {
+    position: absolute;
+    left: -6rem;
+    top: 5%;
+    width: 100%;
+    padding-top: 100%;
+    background-image: url(./images/illustration-box-desktop.svg);
+    background-position: center left;
+  }
+
+  div.content-wrapper {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    width: 100%;
+    max-width: none;
+    padding: 4rem 2rem;
+  }
+
+  h1 {
+    text-align: left;
+  }
+
+  li {
+    width: 85%;
+  }
+}
